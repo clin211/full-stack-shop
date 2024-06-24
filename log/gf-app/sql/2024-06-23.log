@@ -1,0 +1,483 @@
+2024-06-23 12:14:26.820 [ERRO] [ 24 ms] [default] SHOW FULL COLUMNS FROM `rotation_info`
+Error: Error 1049: Unknown database 'goframe' 
+Stack:
+1.  github.com/gogf/gf/database/gdb.(*Core).writeSqlToLogger
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core.go:681
+2.  github.com/gogf/gf/database/gdb.(*Core).DoQuery
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core_underlying.go:71
+3.  github.com/gogf/gf/database/gdb.(*Core).DoGetAll
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core.go:148
+4.  github.com/gogf/gf/database/gdb.(*DriverMysql).TableFields.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_driver_mysql.go:142
+5.  github.com/gogf/gf/container/gmap.(*AnyAnyMap).doSetWithLockCheck
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/container/gmap/gmap_hash_any_any_map.go:223
+6.  github.com/gogf/gf/container/gmap.(*AnyAnyMap).GetOrSetFuncLock
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/container/gmap/gmap_hash_any_any_map.go:260
+7.  github.com/gogf/gf/database/gdb.(*DriverMysql).TableFields
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_driver_mysql.go:134
+8.  github.com/gogf/gf/database/gdb.(*Model).TableFields
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_utility.go:29
+9.  github.com/gogf/gf/database/gdb.(*Model).getSoftFieldName
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_time.go:96
+10. github.com/gogf/gf/database/gdb.(*Model).getSoftFieldNameDeleted
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_time.go:91
+11. github.com/gogf/gf/database/gdb.(*Model).getConditionForSoftDeleting
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_time.go:142
+12. github.com/gogf/gf/database/gdb.(*Model).formatCondition
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_condition.go:450
+13. github.com/gogf/gf/database/gdb.(*Model).getFormattedSqlAndArgs
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_select.go:582
+14. github.com/gogf/gf/database/gdb.(*Model).Count
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_select.go:380
+15. shop/app/system/backend/rotation.(*rotationService).List
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/system/backend/rotation/rotation_service.go:39
+16. shop/app/system/backend/rotation.(*rotationApi).List
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/system/backend/rotation/rotation_api.go:57
+17. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.4.(*middleware).callHandlerFunc.1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:130
+18. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+19. github.com/gogf/gf/net/ghttp.(*middleware).callHandlerFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:128
+20. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.4
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:89
+21. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+22. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:88
+23. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+24. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+25. github.com/goflyfox/gtoken/gtoken.(*GfToken).authMiddleware
+    /Users/forest/go/pkg/mod/github.com/goflyfox/gtoken@v1.4.1/gtoken/gtoken.go:292
+26. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+27. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+28. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+29. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+30. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+31. github.com/goflyfox/gtoken/gtoken.(*GfToken).authMiddleware
+    /Users/forest/go/pkg/mod/github.com/goflyfox/gtoken@v1.4.1/gtoken/gtoken.go:292
+32. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+33. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+34. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+35. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+36. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+37. shop/app/middleware.(*corsMiddleware).CORS
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/middleware/cors.go:12
+38. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+39. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+40. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+41. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+42. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+43. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_server_handler.go:134
+ 
+2024-06-23 12:14:26.824 [ERRO] [  3 ms] [default] SELECT COUNT(1) FROM `rotation_info`
+Error: Error 1049: Unknown database 'goframe' 
+Stack:
+1.  github.com/gogf/gf/database/gdb.(*Core).writeSqlToLogger
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core.go:681
+2.  github.com/gogf/gf/database/gdb.(*Core).DoQuery
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core_underlying.go:71
+3.  github.com/gogf/gf/database/gdb.(*Core).DoGetAll
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core.go:148
+4.  github.com/gogf/gf/database/gdb.(*Model).doGetAllBySql
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_select.go:546
+5.  github.com/gogf/gf/database/gdb.(*Model).Count
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_select.go:381
+6.  shop/app/system/backend/rotation.(*rotationService).List
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/system/backend/rotation/rotation_service.go:39
+7.  shop/app/system/backend/rotation.(*rotationApi).List
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/system/backend/rotation/rotation_api.go:57
+8.  github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.4.(*middleware).callHandlerFunc.1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:130
+9.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+10. github.com/gogf/gf/net/ghttp.(*middleware).callHandlerFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:128
+11. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.4
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:89
+12. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+13. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:88
+14. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+15. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+16. github.com/goflyfox/gtoken/gtoken.(*GfToken).authMiddleware
+    /Users/forest/go/pkg/mod/github.com/goflyfox/gtoken@v1.4.1/gtoken/gtoken.go:292
+17. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+18. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+19. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+20. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+21. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+22. github.com/goflyfox/gtoken/gtoken.(*GfToken).authMiddleware
+    /Users/forest/go/pkg/mod/github.com/goflyfox/gtoken@v1.4.1/gtoken/gtoken.go:292
+23. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+24. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+25. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+26. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+27. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+28. shop/app/middleware.(*corsMiddleware).CORS
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/middleware/cors.go:12
+29. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+30. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+31. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+32. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+33. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+34. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_server_handler.go:134
+ 
+2024-06-23 12:14:27.776 [ERRO] [  6 ms] [default] SHOW FULL COLUMNS FROM `rotation_info`
+Error: Error 1049: Unknown database 'goframe' 
+Stack:
+1.  github.com/gogf/gf/database/gdb.(*Core).writeSqlToLogger
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core.go:681
+2.  github.com/gogf/gf/database/gdb.(*Core).DoQuery
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core_underlying.go:71
+3.  github.com/gogf/gf/database/gdb.(*Core).DoGetAll
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core.go:148
+4.  github.com/gogf/gf/database/gdb.(*DriverMysql).TableFields.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_driver_mysql.go:142
+5.  github.com/gogf/gf/container/gmap.(*AnyAnyMap).doSetWithLockCheck
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/container/gmap/gmap_hash_any_any_map.go:223
+6.  github.com/gogf/gf/container/gmap.(*AnyAnyMap).GetOrSetFuncLock
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/container/gmap/gmap_hash_any_any_map.go:260
+7.  github.com/gogf/gf/database/gdb.(*DriverMysql).TableFields
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_driver_mysql.go:134
+8.  github.com/gogf/gf/database/gdb.(*Model).TableFields
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_utility.go:29
+9.  github.com/gogf/gf/database/gdb.(*Model).getSoftFieldName
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_time.go:96
+10. github.com/gogf/gf/database/gdb.(*Model).getSoftFieldNameDeleted
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_time.go:91
+11. github.com/gogf/gf/database/gdb.(*Model).getConditionForSoftDeleting
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_time.go:142
+12. github.com/gogf/gf/database/gdb.(*Model).formatCondition
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_condition.go:450
+13. github.com/gogf/gf/database/gdb.(*Model).getFormattedSqlAndArgs
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_select.go:582
+14. github.com/gogf/gf/database/gdb.(*Model).Count
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_select.go:380
+15. shop/app/system/backend/rotation.(*rotationService).List
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/system/backend/rotation/rotation_service.go:39
+16. shop/app/system/backend/rotation.(*rotationApi).List
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/system/backend/rotation/rotation_api.go:57
+17. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.4.(*middleware).callHandlerFunc.1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:130
+18. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+19. github.com/gogf/gf/net/ghttp.(*middleware).callHandlerFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:128
+20. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.4
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:89
+21. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+22. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:88
+23. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+24. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+25. github.com/goflyfox/gtoken/gtoken.(*GfToken).authMiddleware
+    /Users/forest/go/pkg/mod/github.com/goflyfox/gtoken@v1.4.1/gtoken/gtoken.go:292
+26. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+27. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+28. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+29. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+30. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+31. github.com/goflyfox/gtoken/gtoken.(*GfToken).authMiddleware
+    /Users/forest/go/pkg/mod/github.com/goflyfox/gtoken@v1.4.1/gtoken/gtoken.go:292
+32. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+33. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+34. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+35. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+36. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+37. shop/app/middleware.(*corsMiddleware).CORS
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/middleware/cors.go:12
+38. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+39. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+40. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+41. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+42. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+43. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_server_handler.go:134
+ 
+2024-06-23 12:14:27.779 [ERRO] [  2 ms] [default] SELECT COUNT(1) FROM `rotation_info`
+Error: Error 1049: Unknown database 'goframe' 
+Stack:
+1.  github.com/gogf/gf/database/gdb.(*Core).writeSqlToLogger
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core.go:681
+2.  github.com/gogf/gf/database/gdb.(*Core).DoQuery
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core_underlying.go:71
+3.  github.com/gogf/gf/database/gdb.(*Core).DoGetAll
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_core.go:148
+4.  github.com/gogf/gf/database/gdb.(*Model).doGetAllBySql
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_select.go:546
+5.  github.com/gogf/gf/database/gdb.(*Model).Count
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/database/gdb/gdb_model_select.go:381
+6.  shop/app/system/backend/rotation.(*rotationService).List
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/system/backend/rotation/rotation_service.go:39
+7.  shop/app/system/backend/rotation.(*rotationApi).List
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/system/backend/rotation/rotation_api.go:57
+8.  github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.4.(*middleware).callHandlerFunc.1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:130
+9.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+10. github.com/gogf/gf/net/ghttp.(*middleware).callHandlerFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:128
+11. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.4
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:89
+12. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+13. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:88
+14. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+15. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+16. github.com/goflyfox/gtoken/gtoken.(*GfToken).authMiddleware
+    /Users/forest/go/pkg/mod/github.com/goflyfox/gtoken@v1.4.1/gtoken/gtoken.go:292
+17. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+18. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+19. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+20. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+21. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+22. github.com/goflyfox/gtoken/gtoken.(*GfToken).authMiddleware
+    /Users/forest/go/pkg/mod/github.com/goflyfox/gtoken@v1.4.1/gtoken/gtoken.go:292
+23. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+24. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+25. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+26. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+27. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+28. shop/app/middleware.(*corsMiddleware).CORS
+    /Users/forest/Desktop/full-stack-mall/goframe-shop-main/app/middleware/cors.go:12
+29. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1.5
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:95
+30. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_func.go:52
+31. github.com/gogf/gf/net/ghttp.(*middleware).Next.func1
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:94
+32. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/util/gutil/gutil.go:46
+33. github.com/gogf/gf/net/ghttp.(*middleware).Next
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_request_middleware.go:48
+34. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/forest/go/pkg/mod/github.com/gogf/gf@v1.16.9/net/ghttp/ghttp_server_handler.go:134
+ 
+2024-06-23 12:18:06.358 [DEBU] [ 13 ms] [default] SHOW FULL COLUMNS FROM `user_info` 
+2024-06-23 12:18:06.381 [DEBU] [ 22 ms] [default] SELECT COUNT(1) FROM `user_info` WHERE (`name`='Forest') AND `deleted_at` IS NULL 
+2024-06-23 12:18:06.385 [DEBU] [  4 ms] [default] INSERT INTO `user_info`(`name`,`password`,`avatar`,`sign`,`updated_at`,`sex`,`secret_answer`,`user_salt`,`created_at`) VALUES('Forest','0376f819ee9e98ce749eb6ec975960da','https://img1.baidu.com/it/u=3269593700,2695107730&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500','今日事今日毕','2024-06-23 12:18:06',1,'who','VJPsOFOxox','2024-06-23 12:18:06')  
+2024-06-23 12:18:31.968 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`avatar`,`password`,`user_salt`,`sex`,`status`,`sign`,`secret_answer`,`created_at`,`updated_at`,`deleted_at` FROM `user_info` WHERE (`name`='Forest') AND `deleted_at` IS NULL LIMIT 1 
+2024-06-23 12:22:03.356 [DEBU] [ 23 ms] [default] SHOW FULL COLUMNS FROM `rotation_info` 
+2024-06-23 12:22:03.360 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:22:03.361 [DEBU] [  1 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 12:22:03.839 [DEBU] [  3 ms] [default] SHOW FULL COLUMNS FROM `goods_info` 
+2024-06-23 12:22:03.840 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:22:03.841 [DEBU] [  1 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 12:22:03.879 [DEBU] [  6 ms] [default] SHOW FULL COLUMNS FROM `category_info` 
+2024-06-23 12:22:03.882 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 12:22:03.884 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 12:22:21.623 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:22:21.628 [DEBU] [  4 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 12:22:22.007 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:22:22.009 [DEBU] [  2 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 12:22:22.074 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 12:22:22.075 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 12:32:26.986 [DEBU] [  6 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:32:26.987 [DEBU] [  1 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 12:32:27.334 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:32:27.337 [DEBU] [  3 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 12:32:27.377 [DEBU] [  4 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 12:32:27.380 [DEBU] [  3 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 12:32:59.677 [DEBU] [  4 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:32:59.678 [DEBU] [  1 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 12:32:59.708 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:32:59.710 [DEBU] [  1 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 12:33:00.200 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 12:33:00.201 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 12:36:06.903 [DEBU] [  7 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:36:06.904 [DEBU] [  0 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 12:36:07.283 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:36:07.284 [DEBU] [  1 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 12:36:07.328 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 12:36:07.331 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 12:57:25.224 [DEBU] [ 19 ms] [default] SHOW FULL COLUMNS FROM `rotation_info` 
+2024-06-23 12:57:25.226 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:57:25.227 [DEBU] [  1 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 12:57:25.562 [DEBU] [  4 ms] [default] SHOW FULL COLUMNS FROM `goods_info` 
+2024-06-23 12:57:25.566 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 12:57:25.577 [DEBU] [ 11 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 12:57:25.623 [DEBU] [  2 ms] [default] SHOW FULL COLUMNS FROM `category_info` 
+2024-06-23 12:57:25.628 [DEBU] [  4 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 12:57:25.631 [DEBU] [  3 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:00:14.218 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:00:14.219 [DEBU] [  1 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 13:00:14.588 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:00:14.591 [DEBU] [  2 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 13:00:14.635 [DEBU] [  5 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:00:14.637 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:03:50.619 [DEBU] [ 11 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:03:50.633 [DEBU] [ 13 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 13:03:50.642 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:03:50.643 [DEBU] [  0 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 13:03:50.649 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:03:50.650 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:05:37.419 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:05:37.422 [DEBU] [  2 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 13:05:37.431 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:05:37.434 [DEBU] [  3 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 13:05:37.441 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:05:37.442 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:06:15.087 [DEBU] [ 12 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:06:15.089 [DEBU] [  1 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 13:06:15.096 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:06:15.099 [DEBU] [  2 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 13:06:15.106 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:06:15.109 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:07:11.874 [DEBU] [ 10 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:07:11.876 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:07:11.889 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:07:11.892 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:45.946 [DEBU] [  4 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:09:45.950 [DEBU] [  3 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:09:45.957 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:45.960 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:48.490 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:09:48.491 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:09:49.487 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:49.488 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:50.269 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:09:50.271 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:09:50.847 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:50.848 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:51.209 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:09:51.215 [DEBU] [  6 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:09:51.519 [DEBU] [ 11 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:51.521 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:51.867 [DEBU] [ 11 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:09:51.877 [DEBU] [ 10 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:09:52.119 [DEBU] [  5 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:52.121 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:52.488 [DEBU] [  5 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:09:52.491 [DEBU] [  3 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:09:52.757 [DEBU] [  7 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:52.760 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:55.170 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:09:55.172 [DEBU] [  2 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 13:09:55.186 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:09:55.187 [DEBU] [  1 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 13:09:55.203 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:09:55.204 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:09:56.643 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:09:56.647 [DEBU] [  4 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:09:56.651 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:09:56.654 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:10:52.763 [DEBU] [  4 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:10:52.765 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:10:52.772 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:10:52.775 [DEBU] [  3 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:10:54.422 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:10:54.425 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:10:55.604 [DEBU] [  4 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:10:55.606 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:10:56.154 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:10:56.156 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:10:56.689 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:10:56.690 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:10:57.351 [DEBU] [  7 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:10:57.353 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:10:57.718 [DEBU] [  4 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:10:57.721 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:10:58.386 [DEBU] [  5 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:10:58.390 [DEBU] [  3 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:10:58.925 [DEBU] [  6 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:10:58.927 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:11:09.090 [DEBU] [  3 ms] [default] SHOW FULL COLUMNS FROM `user_info` 
+2024-06-23 13:11:09.091 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`avatar`,`password`,`user_salt`,`sex`,`status`,`sign`,`secret_answer`,`created_at`,`updated_at`,`deleted_at` FROM `user_info` WHERE (`name`='Forest') AND `deleted_at` IS NULL LIMIT 1 
+2024-06-23 13:11:22.441 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `user_info` WHERE (`name`='Forest') AND `deleted_at` IS NULL 
+2024-06-23 13:13:46.786 [DEBU] [  5 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:13:46.787 [DEBU] [  1 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 13:13:46.798 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:13:46.802 [DEBU] [  4 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 13:13:46.821 [DEBU] [  4 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:13:46.822 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:13:47.913 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:13:47.915 [DEBU] [  2 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:13:47.919 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:13:47.921 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:13:56.729 [DEBU] [  5 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:13:56.731 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:13:58.138 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:13:58.141 [DEBU] [  3 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:13:58.618 [DEBU] [  2 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:13:58.620 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:13:59.367 [DEBU] [  4 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:13:59.370 [DEBU] [  3 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=2) AND `deleted_at` IS NULL 
+2024-06-23 13:13:59.906 [DEBU] [  3 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:13:59.912 [DEBU] [  5 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=5) AND `deleted_at` IS NULL 
+2024-06-23 13:14:01.032 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:14:01.033 [DEBU] [  1 ms] [default] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 0,10 
+2024-06-23 13:14:01.039 [DEBU] [  1 ms] [default] SELECT COUNT(1) FROM `goods_info` WHERE `deleted_at` IS NULL 
+2024-06-23 13:14:01.040 [DEBU] [  1 ms] [default] SELECT `id`,`coupon_id`,`pic_url`,`name`,`price`,`brand`,`stock`,`sale`,`tags`,`detail_info`,`level1_category_id`,`level2_category_id`,`level3_category_id`,`created_at`,`updated_at` FROM `goods_info` WHERE `deleted_at` IS NULL ORDER BY `created_at` ASC LIMIT 0,20 
+2024-06-23 13:14:01.050 [DEBU] [  7 ms] [default] SELECT COUNT(1) FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 13:14:01.051 [DEBU] [  1 ms] [default] SELECT `id`,`name`,`pic_url`,`sort`,`level`,`created_at`,`updated_at` FROM `category_info` WHERE (`parent_id`=1) AND `deleted_at` IS NULL 
+2024-06-23 14:34:37.538 [DEBU] [ 20 ms] [default] SELECT COUNT(1) FROM `user_info` WHERE (`name`='Forest') AND `deleted_at` IS NULL 
+2024-06-23 14:38:02.722 [DEBU] [ 13 ms] [default] SELECT COUNT(1) FROM `user_info` WHERE (`name`='Forest') AND `deleted_at` IS NULL 
